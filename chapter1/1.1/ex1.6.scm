@@ -1,3 +1,10 @@
+;;; Exercise 1.6
+;;; ============
+;;; 
+;;; When using applicative-order evaluation, __every__ argument is 
+;;; evaluated before further expansion. As a result, evaluating 
+;;; any recursive procedure would cause infinite recursion.
+
 (define (square x)
   (* x x))
 
@@ -12,8 +19,6 @@
         )
   (cond (predicate then-clause)
         (else else-clause)))
-; **Every** argument is evaluated before further expansion.
-; Evaluating `(sqrt-iter (improve guess x) x)))` would cause infinite recursion.
 
 (define (sqrt-iter guess x)
   (if (good-enough? guess x)
@@ -32,4 +37,7 @@
 (define (sqrt x)
   (sqrt-iter 1.0 x))
 
-(sqrt 42)
+(display "\n")
+(display (sqrt 42))
+;Value: 6.480740727643494
+
