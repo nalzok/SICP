@@ -1,0 +1,18 @@
+(define (fast-multi-iterative a b)
+  (define (even? num)
+    (= (remainder num 2) 0))
+  (define (double num)
+    (* num 2))
+  (define (half num)
+    (/ num 2))
+  (define (multi-iter a b product)
+    (cond ((= b 0) product)
+          ((even? b) (multi-iter (double a) (half b) product))
+          (else (multi-iter a (- b 1) (+ product a)))))
+  (multi-iter a b 0))
+
+(display "\n")
+(display (fast-multi-iterative 42 11))
+(display "\n")
+(display (fast-multi-iterative 11 42))
+
