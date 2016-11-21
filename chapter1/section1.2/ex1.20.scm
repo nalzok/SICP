@@ -1,9 +1,20 @@
+;;; Exercise 1.20
+;;; =============
+;;;
+;;; As this exercise shows, "The process that a procedure generates is 
+;;; of course dependent on the rules used by the interpreter." Also note
+;;; that applicative-order evaluation can bring "additional efficiency".
+
+
+
 (define (gcd a b)
   (if (= b 0)
     a
     (gcd b (remainder a b))))
 
-;;;;;;;;;; Normal-order ;;;;;;;;;;
+;; Normal-order
+;; ------------
+;;
 ;; (gcd 206 40)
 ;; (= 40 0)
 ;; (gcd 40 (remainder 206 40))
@@ -33,9 +44,11 @@
 ;;     -> (remainder (remainder 206 40) 4)
 ;;     -> (remainder 6 4)
 ;;     -> 2
-;;;;;;;;;; Total: 18 remainder evaluations ;;;;;;;;;;
+;; 18 remainder evaluations in total
 
-;;;;;;;;;; Applicative-order ;;;;;;;;;;
+;; Applicative-order
+;; -----------------
+;;
 ;; (gcd 206 40)
 ;; (= 40 0)
 ;; (gcd 40 (remainder 206 40))
@@ -51,4 +64,5 @@
 ;;     -> (gcd 2 0)
 ;; (= 0 0)
 ;; 2
-;;;;;;;;;; Total: 4 remainder evaluations ;;;;;;;;;;
+;; 4 remainder evaluations in total
+

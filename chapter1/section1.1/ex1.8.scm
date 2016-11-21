@@ -5,6 +5,8 @@
 ;;; to the square-root procedure", which means you can do this exercise by
 ;;; making some minor modifications to the square-root procedure.
 
+
+
 (define (cube-root-iter guess x)
   (if (good-enough? guess (improve guess x))
     guess
@@ -19,10 +21,10 @@
 (define (cube-root x)
   (cube-root-iter 1.0 x))
 
-(display "\n")
+(newline)
 (display (cube-root 27))
 ;Value: 3.0000005410641766
-(display "\n")
+(newline)
 (display (cube-root -27))
 ;Value: -3.0001270919925287
 

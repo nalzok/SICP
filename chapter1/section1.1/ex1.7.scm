@@ -6,6 +6,8 @@
 ;;; On the other hand, for very small numbers, (< (abs (- (square guess) x))
 ;;; 0.001) would become a fairly low standard which can be reached easily.
 
+
+
 (define (square x)
   (* x x))
 
@@ -31,9 +33,10 @@
 (define (sqrt x)
   (sqrt-iter 1.0 x))
 
-(display "\n")
+(newline)
 (display (sqrt 1e-100))
 ;Value: 1.000000633105179e-50
-(display "\n")
+(newline)
 (display (sqrt 1e100))
 ;Value: 1.000000633105179e50
+

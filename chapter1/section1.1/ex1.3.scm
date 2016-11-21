@@ -5,6 +5,8 @@
 ;;; two larger numbers. Otherwise, b can't be the smallest number, so
 ;;; b must be one of the two larger numbers.
 
+
+
 (define (larger x y)
   (if (> x y) 
     x
@@ -22,7 +24,7 @@
         (else
           (sum-of-square b (larger a c)))))
 
-(display "\n")
+(newline)
 (display (sum-of-the-squares-of-the-two-larger-numbers 1 2 3))
 ;Value: 13
 

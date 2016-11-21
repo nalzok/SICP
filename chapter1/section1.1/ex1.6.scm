@@ -5,6 +5,8 @@
 ;;; evaluated before further expansion. As a result, evaluating 
 ;;; any recursive procedure would cause infinite recursion.
 
+
+
 (define (square x)
   (* x x))
 
@@ -37,7 +39,7 @@
 (define (sqrt x)
   (sqrt-iter 1.0 x))
 
-(display "\n")
+(newline)
 (display (sqrt 42))
 ;Value: 6.480740727643494
 
