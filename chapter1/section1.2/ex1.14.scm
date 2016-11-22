@@ -19,8 +19,8 @@
 ;;;
 ;;; * When there is only one type of coin, the number of steps is obviously 
 ;;; proportional to n.
-;;; * Suppose it would take (cc n m) steps to change an amount of n
-;;; with m types of coin. (cc n m) approximately equals to 
+;;; * Suppose it would take `(cc n m)` steps to change an amount of n
+;;; with m types of coin. `(cc n m)` approximately equals to 
 ;;;
 ;;;     (cc n    m-1) + (cc n    m-2) + ... + (cc n    1)
 ;;;   + (cc n-A  m-1) + (cc n-A  m-2) + ... + (cc n-A  1)
@@ -30,8 +30,8 @@
 ;;;   , where A is the denomination of the mth kind of coin.
 ;;;
 ;;; In the matrix above, the number of rows should be proportional to n, and
-;;; since (cc n m-1) is proportional to n^(m-1), (cc n m) is proportional to
-;;; n*n^(m-1), i.e. n^m.
+;;; since `(cc n m-1)` is proportional to n^(m-1), `(cc n m)` is proportional
+;;; to n*n^(m-1), i.e. n^m.
 
 
 

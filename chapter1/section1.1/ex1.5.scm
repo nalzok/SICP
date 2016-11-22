@@ -6,8 +6,6 @@
 ;;; and applicative-order evaluation produce the same value. However, this
 ;;; exercise shows an instance of an ''illegitimate'' value.
 
-
-
 (define (p) (p))
 
 (define (test x y)

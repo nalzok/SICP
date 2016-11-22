@@ -1,9 +1,9 @@
 ;;; Exercise 1.8
 ;;; ============
 ;;;
-;;; The instruction points out that the cube-root procedure is "analogous
-;;; to the square-root procedure", which means you can do this exercise by
-;;; making some minor modifications to the square-root procedure.
+;;; The instruction points out that the `cube-root` procedure is "analogous
+;;; to the `square-root` procedure", which means you can do this exercise by
+;;; making some minor modifications to the `square-root` procedure.
 
 
 

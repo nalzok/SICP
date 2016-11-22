@@ -1,9 +1,9 @@
 ;;; Exercise 1.3
 ;;; ============
 ;;;
-;;; If a > b, a can't be the smallest number, so a must be one of the
-;;; two larger numbers. Otherwise, b can't be the smallest number, so
-;;; b must be one of the two larger numbers.
+;;; If `a` > `b`, `a` can't be the smallest number, so `a` must be one of
+;;; the two larger numbers. Otherwise, `b` can't be the smallest number, so
+;;; `b` must be one of the two larger numbers.
 
 
 

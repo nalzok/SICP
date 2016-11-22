@@ -4,9 +4,9 @@
 ;;; The recursive process is relatively straightforward. Look at the function
 ;;; definition, and try to use it.
 ;;; 
-;;; When writing the iterative one, the idea is to use three integers a, b
-;;; and c, initialized to 2, 1 and 0 respectively, and to repeatedly apply
-;;; the simultaneous transformations:
+;;; When designing the iterative one, the idea is to use three integers `a`
+;;; , `b` and `c`, initialized to 2, 1 and 0 respectively, and to repeatedly
+;;; apply the following simultaneous transformation:
 ;;; a <- b + c
 ;;; b <- a
 ;;; c <- b

@@ -1,9 +1,9 @@
 ;;; Exercise 1.17
 ;;; =============
 ;;;
-;;; Use the following observation:
+;;; Use the following equation:
 ;;; a*b = (2*a)*(b/2), if b is even
-;;;       a*(b-1)+a, if b is odd
+;;;       a*(b-1)+a  , if b is odd
 
 
 

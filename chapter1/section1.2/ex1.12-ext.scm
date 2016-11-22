@@ -6,9 +6,9 @@
 ;;; the following program, which can pretty-print a Pascal's triangle, given
 ;;; its order.
 ;;;
-;;; For completeness, I wrote two solutions: one is pascal-recursive, which
-;;; is recursive; the other is pascal-iterative, which is iterative. Note
-;;; that the sub-definition of pascal-item in these two processes are also
+;;; For completeness, I wrote two solutions: one is `pascal-recursive`, which
+;;; is recursive; the other is `pascal-iterative`, which is iterative. Note
+;;; that the sub-definition of `pascal-item` in these two processes are also
 ;;; recursive and iterative, respectively. To compare their efficicency, you
 ;;; can increase the order of the Pascal's triangle to be print.
 

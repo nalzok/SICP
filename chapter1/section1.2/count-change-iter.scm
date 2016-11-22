@@ -1,9 +1,9 @@
-;;; Iterative “counting change” implementation
+;;; Iterative "counting change" implementation
 ;;; ==========================================
 ;;;
 (define (count-change amount)
-  ;; Penny can be determined given amount,half-dollar, quarter, dime and
-  ;; nickeli, so it's unnecessary to include it in the formal parameters.
+  ; Penny can be determined given amount, half-dollar, quarter, dime and
+  ; nickeli, so it's unnecessary to include it in the formal parameters.
   (define (count-iter half-dollar quarter dime nickeli acc)
     (cond ((> (* half-dollar 50) amount)
            acc)

@@ -1,7 +1,7 @@
 ;;; Exercise 1.15
 ;;; =============
 ;;;
-;;; a. The procedure p is applied 5 times
+;;; a. The procedure `p` is applied 5 times
 ;;;    ----------------------------------
 ;;;    12.15
 ;;; -> 4.05

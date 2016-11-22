@@ -1,10 +1,11 @@
 ;;; Exercise 1.7
 ;;; ============
 ;;;
-;;; On one hand, for very large numbers, the difference between (square guess)
-;;; and x can always be greater than 0.001, cauing infinite recursion.
-;;; On the other hand, for very small numbers, (< (abs (- (square guess) x))
-;;; 0.001) would become a fairly low standard which can be reached easily.
+;;; On one hand, for very large numbers, the difference between `(square
+;;; guess)` and `x` can always be greater than 0.001, cauing infinite 
+;;; recursion. On the other hand, for very small numbers, `(< (abs 
+;;; (- (square guess) x)) 0.001)` would be a fairly low standard which
+;;; can be reached easily.
 
 
 

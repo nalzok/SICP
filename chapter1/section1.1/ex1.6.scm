@@ -1,7 +1,7 @@
 ;;; Exercise 1.6
 ;;; ============
 ;;; 
-;;; When using applicative-order evaluation, __every__ argument is 
+;;; When using applicative-order evaluation, EVERY argument is 
 ;;; evaluated before further expansion. As a result, evaluating 
 ;;; any recursive procedure would cause infinite recursion.
 

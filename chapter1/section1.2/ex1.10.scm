@@ -1,11 +1,11 @@
 ;;; Exercise 1.10 
 ;;; =============
 ;;;
-;;; Just for fun, I've also included (i n), which is defined to be (A 3 n).
+;;; Just for fun, I've also included `(i n)`, which is defined to be `(A 3 n)`.
 ;;;
-;;; If you know the concise mathematical definition of (A x y), it would be
-;;; easy to tell what (A x+1 y) means. As the "Note that" lines below
-;;; indicates, in general, (A x+1 y) = (A x (A x y-1)).
+;;; If you know the concise mathematical definition of `(A x y)`, it would be
+;;; easy to tell what `(A x+1 y)` means. Also, as the "Note that" lines below
+;;; indicates, generally speaking, `(A x+1 y) = (A x (A x y-1))`.
 
 
 
