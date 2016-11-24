@@ -41,9 +41,7 @@
   (start-prime-test n (runtime)))
 
 (define (start-prime-test n start-time)
-  (if (fast-prime? n 42) ; If n passes the test for 42 random choices of a
-                         ; , the chances are better than (2^42-1) in 2^42
-                         ; that n is prime.
+  (if (fast-prime? n 42)
     (report-prime (- (runtime) start-time))))
 
 (define (report-prime elapsed-time)

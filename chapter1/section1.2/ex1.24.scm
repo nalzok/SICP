@@ -2,7 +2,7 @@
 ;;; =============
 ;;;
 ;;; Test primality the probabilistic way. Althought it is possible that some
-;;; large integers happen to be Carmichael numbers, as engineers, we don't
+;;; large integers happen to be Carmichael numbers, we the engineers don't
 ;;; really about this, because the change is even lower than the chance that
 ;;; cosmic radiation will cause the computer to make an error in carrying
 ;;; out a ''correct'' algorithm. Actually, engineers would care more about
@@ -40,9 +40,9 @@
   (start-prime-test n (runtime)))
 
 (define (start-prime-test n start-time)
-  (if (fast-prime? n 42) ; If n passes the test for 42 random choices of a
-                         ; , the chances are better than (2^42-1) in 2^42
-                         ; that n is prime.
+  (if (fast-prime? n 1024) ; If n passes the test for 1024 random choices
+                           ; of a, the chances are better than 2^1024-1 in
+                           ; 2^1024 that n is prime.
     (report-prime (- (runtime) start-time))))
 
 (define (report-prime elapsed-time)
