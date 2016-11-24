@@ -4,19 +4,19 @@
 ;;; Test primality the brute-force way. This exercise aims to visualize the
 ;;; concept of "order of growth".
 
-; The code below is provided by this exercise.
-(define (even? n)
-  (= (remainder n 2) 0))
-(define (divides? a b)
-  (= (remainder b a) 0))
+
+
+(define (smallest-divisor n)
+  (find-divisor n 2))
 (define (find-divisor n test-divisor)
   (cond ((> (square test-divisor) n) n)
         ((divides? test-divisor n) test-divisor)
         (else (find-divisor n (+ test-divisor 1)))))
-(define (smallest-divisor n)
-  (find-divisor n 2))
+(define (divides? a b)
+  (= (remainder b a) 0))
 (define (prime? n)
   (= n (smallest-divisor n)))
+
 (define (timed-prime-test n)
   (newline)
   (display n)
@@ -27,7 +27,6 @@
 (define (report-prime elapsed-time)
   (display " *** ")
   (display elapsed-time))
-; The code above is provided by this exercise.
 
 (define (search-for-primes from to)
   (cond ((> from to) 0)

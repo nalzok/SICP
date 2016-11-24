@@ -1,17 +1,19 @@
 ;;; Exercise 1.18
 ;;; =============
 ;;;
-;;; For most recursive processes we've encounted by now, transforming them to
-;;; their iterative form roughly consists of 3 steps:
-;;; 1. Define a helper procedure with an extra "result" parameter. In this 
-;;;    case, let's call this parameter `product`.
-;;; 2. Apply what would be applied to the procedure's return value to that
-;;;    parameter.
-;;; 3. Call this helper procedure to get started. The initial value for the
-;;;    "result" parameter is the value for the exit point of the recursive
-;;;    process, so that the resulting iterative process starts from where the
-;;;    recursive process starts to shrink. In this case, it's the later 0 in
-;;;    the `((= b 0) 0)` clause in ex1.17.scm.
+;;; The iterative program and its recursive program isn't closely related
+;;; here. You may have noticed that my answer for exercise 1.16 actually
+;;; uses an algorithm totally different from the one used by the `fast-expt` 
+;;; procedure provided by the textbook: `b` is consistent in the book's
+;;; version, but in `ex1.16.scm`, it is doubled when `n` is even. Similarly,
+;;; in the procedure below, `a` is doubled when `b` is even.
+;;;
+;;; However, there do exist uniform manners which can  convert a non-tail
+;;; recursive precedure that generates a recursive process to its tail
+;;; recursive equivalent that generates an iterative process. One idea is
+;;; to use continuation passing style (CPS). You can read more on CPS in 
+;;; the following link:
+;;; http://cs.stackexchange.com/posts/comments/141204
 
 
 
@@ -24,14 +26,14 @@
     (/ n 2))
   (define (multi-iter a b product)
     (cond ((= b 0) product)
-          ((even? b) (multi-iter a (half b) (double product)))
+          ((even? b) (multi-iter (double a) (half b) product))
           (else (multi-iter a (- b 1) (+ product a)))))
   (multi-iter a b 0))
 
 (newline)
-(display (fast-multiply 42 11))
-;Value: 462
+(display (fast-multiply 6 7)) ; works when `b` is odd
+;Value: 42
 (newline)
-(display (fast-multiply 11 42))
-;Value: 462
+(display (fast-multiply 7 6)) ; works when `b` is even
+;Value: 42
 

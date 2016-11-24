@@ -6,27 +6,23 @@
 ;;; a divisor is prime is not very easy. Anyway, the purpose of the whole
 ;;; program is to check primality.
 
-; The code below is provided by this exercise.
-(define (even? n)
-  (= (remainder n 2) 0))
-(define (divides? a b)
-  (= (remainder b a) 0))
-; The code above is provided by this exercise.
 
-(define (next old-divisor)
-  (if (= old-divisor 2)
+
+(define (next former-divisor)
+  (if (= former-divisor 2)
     3
-    (+ old-divisor 2)))
+    (+ former-divisor 2)))
+(define (smallest-divisor n)
+  (find-divisor n 2))
 (define (find-divisor n test-divisor)
   (cond ((> (square test-divisor) n) n)
         ((divides? test-divisor n) test-divisor)
         (else (find-divisor n (next test-divisor)))))
-(define (smallest-divisor n)
-  (find-divisor n 2))
-
-; The code below is provided by this exercise.
+(define (divides? a b)
+  (= (remainder b a) 0))
 (define (prime? n)
   (= n (smallest-divisor n)))
+
 (define (timed-prime-test n)
   (newline)
   (display n)
@@ -37,7 +33,6 @@
 (define (report-prime elapsed-time)
   (display " *** ")
   (display elapsed-time))
-; The code above is provided by this exercise.
 
 (timed-prime-test 1000000007)
 (timed-prime-test 10000000019)
