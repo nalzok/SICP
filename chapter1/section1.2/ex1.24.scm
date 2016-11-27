@@ -24,7 +24,7 @@
         ((fermat-test n) (fast-prime? n (- times 1)))
         (else #f)))
 
-; Tried to write an iterative version, but failed.
+; Try to write an iterative version
 (define (expmod base exp m)
   (cond ((= exp 0) 1)
         ((even? exp)

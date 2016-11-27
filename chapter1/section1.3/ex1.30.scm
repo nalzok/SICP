@@ -8,8 +8,8 @@
   (define (iter a result)
         (if (> a b)
             result
-            (iter (next a) (+ (term a)
-                              result))))
+            (iter (next a) (+ result
+                              (term a)))))
   (iter a 0))
 
 (define (pi-sum a b)

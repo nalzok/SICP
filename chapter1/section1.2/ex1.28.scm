@@ -12,14 +12,14 @@
   (start-prime-test n (runtime)))
 
 (define (start-prime-test n start-time)
-  (if (prime-pretest n)
+  (if (prime-test-starter n)
     (report-prime (- (runtime) start-time))))
 
 (define (report-prime elapsed-time)
   (display " *** ")
   (display elapsed-time))
 
-(define (prime-pretest n)
+(define (prime-test-starter n)
   (cond ((= n 1) #f)
         ((= n 2) #t)
         ((even? n) #f)
