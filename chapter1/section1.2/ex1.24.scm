@@ -17,6 +17,7 @@
 (define (fermat-test n)
   (define (try-it a)
     (= (expmod a n n) a))
+  ; Wait a second! What's the order of growth of `random`?
   (try-it (+ 1 (random (- n 1)))))
 
 (define (fast-prime? n times)
