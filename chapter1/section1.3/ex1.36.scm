@@ -3,7 +3,11 @@
 ;;;
 ;;; Average damping is another technique which is easy to apply (simply
 ;;; average the independent and dependent variables), but can make the
-;;; procedure much more efficient, in many cases.
+;;; procedure much more efficient in many cases.
+;;;
+;;; For more information on average damping, see:
+;;;
+;;; http://stackoverflow.com/q/3860929/5399734
 ;;;
 ;;; However, note that `fixed-point` can only find "attractive fixed points"
 ;;; given that `first-guess` is in the neighbourhood of a fixed point. For
