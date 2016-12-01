@@ -10,11 +10,11 @@ For more information on SICP, please visit [the SICP Web Site][1].
 
 ## Quotations
 
-> I think that it's extraordinarily important that we in computer science keep fun in computing. When it started out, it was an awful lot of fun. Of course, the paying customers got shafted every now and then, and after a while we began to take their complaints seriously. We began to feel as if we really were responsible for the successful, error-free perfect use of these machines. I don't think we are. I think we're responsible for stretching them, setting them off in new directions, and keeping fun in the house. I hope the field of computer science never loses its sense of fun. 
+> I think we're responsible for stretching them(machines), setting them off in new directions, and keeping fun in the house. I hope the field of computer science never loses its sense of fun. 
 
 [source][quote1]
 
-> Our design of this introductory computer-science subject reflects two major concerns. First, we want to establish the idea that a computer language is not just a way of getting a computer to perform operations but rather that it is a novel formal medium for expressing ideas about methodology. Thus, programs must be written for people to read, and only incidentally for machines to execute. Second, we believe that the essential material to be addressed by a subject at this level is not the syntax of particular programming-language constructs, nor clever algorithms for computing particular functions efficiently, nor even the mathematical analysis of algorithms and the foundations of computing, but rather the techniques used to control the intellectual complexity of large software systems.
+> Thus, programs must be written for people to read, and only incidentally for machines to execute.
 
 [source][quote2]
 
