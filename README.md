@@ -42,7 +42,7 @@ For more information on SICP, please visit [the SICP Web Site][1].
 
     `mit-scheme`
     
-[![scheme-screenshot][scheme-screenshot]][scheme-screenshot]
+[![screenshot][scheme-screenshot]][scheme-screenshot]
 
 Reference:
 
