@@ -1,6 +1,5 @@
 ;;; Exercise 1.3
 ;;; ============
-;;;
 
 (define (larger x y)
   (if (> x y) 
@@ -14,9 +13,6 @@
   (+ (square x) (square y)))
 
 (define (sum-of-the-squares-of-the-two-larger-numbers a b c)
-  ; If `a` > `b`, `a` can't be the smallest number, so `a` must be one of
-  ; the two larger numbers. Otherwise, `b` can't be the smallest number, so
-  ; `b` must be one of the two larger numbers.
   (cond ((> a b)
           (sum-of-square a (larger b c)))
         (else

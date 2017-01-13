@@ -1,6 +1,5 @@
 ;;; Exercise 1.8
 ;;; ============
-;;;
 
 (define (cube-root-iter guess x)
   (if (good-enough? guess (improve guess x))

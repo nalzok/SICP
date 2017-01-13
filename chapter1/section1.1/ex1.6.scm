@@ -1,6 +1,5 @@
 ;;; Exercise 1.6
 ;;; ============
-;;; 
 
 (define (square x)
   (* x x))
@@ -35,19 +34,19 @@
   (sqrt-iter 1.0 x))
 
 (sqrt 42)
-;Value: ;Aborting!: maximum recursion depth exceeded
+;Aborting!: maximum recursion depth exceeded
 
-; In the evaluation of the special form `if`, only one of `<consequent>` and
-; `<alternative>` would be evaluated. In this case, when `(good-enough? guess
-; x)` computes to #t, `sqrt-iter` won't be called, which ends the expansion..
-;
-; `New-if`, however, is a precedure, which is dealt with applicative-order
-; evaluation, where EVERY argument is evaluated before further expansion. As
-; a result, regardless of what `(good-enough? guess x)` yields, `sqrt-iter`
-; would always be called by itself, causing infinite recursion.
-;
-; Also note that using normal-order evaluation would also result in infinite
-; recursion, because all arguments are still evaluated before further
-; expansion. In fact, I can't see any difference between applicative-order and
-; normal-order evaluation in this case.
+;; In the evaluation of the special form `if`, only one of `<consequent>` and
+;; `<alternative>` would be evaluated. In this case, when `(good-enough? guess
+;; x)` computes to #t, `sqrt-iter` won't be called, which ends the expansion..
+;;
+;; `New-if`, however, is a precedure, which is dealt with applicative-order
+;; evaluation, where EVERY argument is evaluated before further expansion. As
+;; a result, regardless of what `(good-enough? guess x)` yields, `sqrt-iter`
+;; would always be called by itself over and over, causing infinite recursion.
+;;
+;; Also note that using normal-order evaluation would also result in infinite
+;; recursion, because all arguments are still evaluated before further
+;; expansion. In fact, I can't see any difference between applicative-order and
+;; normal-order evaluation in this case.
 
