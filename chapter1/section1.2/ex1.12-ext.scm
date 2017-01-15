@@ -1,37 +1,23 @@
-;;; Exercise 1.12 - Extended
+;;; Exercise 1.12 extended: Pretty-print a Pascal's trangle
 ;;; ========================
-;;;
-;;; The instruction only asks me to compute an element of Pascal's triangle
-;;; with a given pair of row and column numbers. To challenge myself, I wrote
-;;; the following program, which can pretty-print a Pascal's triangle, given
-;;; its order.
-;;;
-;;; For completeness, I wrote two solutions: one is `pascal-recursive`, which
-;;; is recursive; the other is `pascal-iterative`, which is iterative. Note
-;;; that the sub-definition of `pascal-item` in these two processes are also
-;;; recursive and iterative, respectively. To compare their efficicency, you
-;;; can increase the order of the Pascal's triangle to be print.
 
+;; Recursive
 
-
-;; Recursive method
-;; ----------------
-;;
-(define (pascal-recursive x)
+(define (pascal x)
   (define (pascal-wrapper m step-len)
     (define (pascal-iter m)
       (define (print-row m_)
         (define (print-row-iter n_)
-          (cond ((= n_ 0) "Done")
+          (cond ((= n_ 0) "done")
                 (else (print-row-iter (- n_ 1))
                       (mid-print (pascal-item m_ n_)))))
         (display "\n") 
         (print-space (* (- x m_) step-len))
         (print-row-iter m_))
-      (cond ((= m 0) "Done")
+      (cond ((= m 0) "done")
             (else (pascal-iter (- m 1))
                   (print-row m))))
-    ; print step-len characters: a centered item and spaces on its both side.
+    ; print `step-len` characters: one number surrounded by spaces
     (define (mid-print item)
       (print-space (floor (- step-len
                              (/ (num-of-digit item) 2))))
@@ -41,7 +27,7 @@
     (define (print-space n)
       (cond ((> n 0) (display " ")
                      (print-space (- n 1)))
-            (else "Done")))
+            (else "done")))
     (pascal-iter m))
   (define (num-of-digit val)
     (if (and (< val 10) (> val -10))
@@ -57,20 +43,24 @@
     (pascal-item x (floor (/ x 2))))
   (pascal-wrapper x (num-of-digit max-pascal-item)))
 
-(newline)
-(newline)
-(display "pascal-recursive")
-(newline)
-(pascal-recursive 10)
+(pascal 10)
+;                             1   
+;                          1     1   
+;                       1     2     1   
+;                    1     3     3     1   
+;                 1     4     6     4     1   
+;              1     5     10    10    5     1   
+;           1     6     15    20    15    6     1   
+;        1     7     21    35    35    21    7     1   
+;     1     8     28    56    70    56    28    8     1   
+;  1     9     36    84   126   126    84    36    9     1   
 
+;; Iterative
 
-;; Iterative method
-;; ----------------
-;;
-(define (pascal-iterative x)
+(define (pascal x)
   (define (pascal-wrapper x step-len)
     (define (pascal-iter row-counter col-counter max-count)
-      (cond ((> row-counter max-count) "Done")
+      (cond ((> row-counter max-count) "done")
             ((> col-counter row-counter) 
              (display "\n") 
              (print-space (* (- max-count (+ row-counter 1))
@@ -81,7 +71,7 @@
                   (pascal-iter row-counter 
                                (+ col-counter 1)
                                max-count))))
-    ; print step-len characters: a centered item and spaces on its both side.
+    ; print `step-len` characters: one number surrounded by spaces
     (define (mid-print item)
       (print-space (floor (- step-len
                              (/ (num-of-digit item) 2))))
@@ -92,7 +82,7 @@
   (define (print-space n)
     (cond ((> n 0) (display " ")
                    (print-space (- n 1)))
-          (else "Done")))
+          (else "done")))
   (define (num-of-digit val)
     (if (and (< val 10) (> val -10))
       1
@@ -115,9 +105,15 @@
     (pascal-item x (floor (/ x 2))))
   (pascal-wrapper x (num-of-digit max-pascal-item)))
 
-(newline)
-(newline)
-(display "pascal-iterative")
-(newline)
-(pascal-iterative 10)
+(pascal 10)
+;                             1   
+;                          1     1   
+;                       1     2     1   
+;                    1     3     3     1   
+;                 1     4     6     4     1   
+;              1     5     10    10    5     1   
+;           1     6     15    20    15    6     1   
+;        1     7     21    35    35    21    7     1   
+;     1     8     28    56    70    56    28    8     1   
+;  1     9     36    84   126   126    84    36    9     1   
 

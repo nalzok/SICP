@@ -1,11 +1,5 @@
 ;;; Exercise 1.16
 ;;; =============
-;;;
-;;; The authors of SICP have already provided a hint. To make it a little
-;;; more clear: b^n equals (b^2)^(n/2) if n is even, or b*(b^(n-1)) is n
-;;; is odd if n is odd.
-
-
 
 (define (fast-expt b n)
   (define (even? n)
@@ -18,7 +12,6 @@
           (else (expt-iter b (- n 1) (* a b)))))
   (expt-iter b n 1))
 
-(newline)
-(display (fast-expt 2 10))
-;Value: 1024
+(fast-expt 2 1000)
+;Value: 10715086071862673209484250490600018105614048117055336074437503883703510511249361224931983788156958581275946729175531468251871452856923140435984577574698574803934567774824230985421074605062371141877954182153046474983581941267398767559165543946077062914571196477686542167660429831652624386837205668069376
 
