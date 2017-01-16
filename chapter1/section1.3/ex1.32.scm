@@ -1,13 +1,8 @@
 ;;; Exercise 1.32
 ;;; =============
-;;;
-;;; `Accumulate` is a higher-level abstraction. We are building abstractions
-;;; by replacing "magic numbers" and "magic procedures" with parameters.
 
+;; Recursive
 
-
-;; Recursive version
-;;
 (define (accumulate combiner null-value term a next b)
   (if (> a b)
     null-value
@@ -19,17 +14,17 @@
                         next
                         b))))
     
-;; Iterative version
-;;
+;; Iterative
+
 (define (accumulate combiner null-value term a next b)
   (define (iter a result)
     (if (> a b)
       result
-      (iter (next a) (combiner result (term a)))))
+      (iter (next a) (combiner (term a) result))))
   (iter a null-value))
 
 ;; `sum`
-;;
+
 (define (sum term a next b)
   (accumulate + 0 term a next b))
 
@@ -40,12 +35,11 @@
     (+ x 4))
   (sum pi-term a pi-next b))
 
-(newline)
-(display (* 8 (pi-sum 1 1000)))
+(* 8 (pi-sum 1 1000))
 ;Value: 3.139592655589782
 
 ;; `produce`
-;;
+
 (define (product term a next b)
   (accumulate * 1 term a next b))
 
@@ -57,7 +51,6 @@
     (+ i 1))
   (* (product pi-term 1 pi-next n) 4.0))
 
-(newline)
-(display (pi-prod 1000))
+(pi-prod 1000)
 ;Value: 3.1431607055322663
 

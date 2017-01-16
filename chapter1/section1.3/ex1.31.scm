@@ -1,28 +1,23 @@
 ;;; Exercise 1.31
 ;;; =============
-;;;
-;;; 1. Change the `+` and `0` in `sum` to `*` and `1`, respectively.
-;;; 2. Give proper names to the procedure and its parameters. 
-;;;
-;;; That's all what you need to do.
 
+; Recursive
 
-;; Recursive version
-;;
 (define (product term a next b)
   (if (> a b)
     1
     (* (term a)
        (product term (next a) next b))))
 
-;; Iterative version
-;;
+;; Iterative
+
 (define (product term a next b)
   (define (iter a result)
     (if (> a b)
       result
-      (iter (next a) (* result
-                        (term a)))))
+      (iter (next a)
+            (* (term a)
+               result))))
   (iter a 1))
 
 (define (factorial n)
@@ -30,8 +25,7 @@
   (define (inc i) (+ i 1))
   (product identity 1 inc n))
 
-(newline)
-(display (factorial 5))
+(factorial 5)
 ;Value: 120
 
 (define (pi-prod n)
@@ -42,7 +36,6 @@
     (+ i 1))
   (* (product pi-term 1 pi-next n) 4.0))
 
-(newline)
-(display (pi-prod 1000))
+(pi-prod 1000)
 ;Value: 3.1431607055322663
 

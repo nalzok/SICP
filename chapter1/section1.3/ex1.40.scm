@@ -1,8 +1,5 @@
 ;;; Exercise 1.40
 ;;; =============
-;;;
-;;; A simple example of reusing `newtons-method`.
-
 
 (define tolerance 0.00001)
 (define (fixed-point f first-guess)
@@ -32,7 +29,6 @@
                  (* b x)
                  c)))
 
-(newline)
-(display (newtons-method (cubic 1 1 1) 1))
+(newtons-method (cubic 1 1 1) 1)
 ;Value: -.9999999999997796
 
